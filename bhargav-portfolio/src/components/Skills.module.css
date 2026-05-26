@@ -1,0 +1,52 @@
+.section {
+  padding: 7rem 0;
+  position: relative; z-index: 1;
+}
+
+.sub {
+  color: var(--muted); font-size: 15px;
+  margin-bottom: 3rem; max-width: 500px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+}
+.card:hover {
+  border-color: rgba(168,85,247,0.4);
+  background: var(--surface2);
+  transform: translateY(-2px);
+}
+
+.catLabel {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--purple);
+  margin-bottom: 1rem;
+}
+
+.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.pill {
+  background: rgba(168,85,247,0.08);
+  border: 1px solid rgba(168,85,247,0.2);
+  color: var(--text); font-size: 13px;
+  padding: 4px 12px; border-radius: 6px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.pill:hover {
+  background: rgba(168,85,247,0.18);
+  border-color: rgba(168,85,247,0.5);
+}
+
+@media (max-width: 640px) {
+  .section { padding: 5rem 0; }
+}

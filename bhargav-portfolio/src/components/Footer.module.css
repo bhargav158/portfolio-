@@ -1,0 +1,26 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2.5rem 0;
+  position: relative; z-index: 1;
+}
+.inner {
+  max-width: 1100px; margin: 0 auto; padding: 0 2.5rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+}
+.left { display: flex; align-items: center; gap: 12px; }
+.logo { display: flex; align-items: center; gap: 8px; font-size: 1rem; font-weight: 700; }
+.logoBox {
+  width: 30px; height: 30px; border-radius: 6px;
+  background: linear-gradient(135deg, var(--purple), var(--pink));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 800; color: #fff;
+}
+.purple { color: var(--purple); }
+.sub { font-size: 12px; color: var(--faint); }
+.right { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+.text { font-size: 12px; color: var(--faint); }
+
+@media (max-width: 640px) {
+  .inner { flex-direction: column; align-items: flex-start; }
+  .right { align-items: flex-start; }
+}
