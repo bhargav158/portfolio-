@@ -1,6 +1,13 @@
 import { experience, achievements } from '../data'
 import styles from './Experience.module.css'
 
+const companyColors: Record<string, string> = {
+  'Besant Technologies': '#22d3ee',
+  'Vayu Aarambh Innovations': '#9b6dff',
+  'CodSoft': '#f059a0',
+  'Edunet Foundation': '#34d399',
+}
+
 export default function Experience() {
   return (
     <section id="experience" className={styles.section}>
@@ -14,13 +21,28 @@ export default function Experience() {
             <h3 className={styles.colTitle}>Work History</h3>
             {experience.map((e, i) => (
               <div key={i} className={styles.item}>
-                <div className={styles.dot}>
-                  <div className={styles.dotInner} />
+                <div className={styles.dotCol}>
+                  <div
+                    className={styles.dotInner}
+                    style={{ background: companyColors[e.company] || 'var(--purple)', boxShadow: `0 0 12px ${companyColors[e.company] || 'var(--purple)'}60` }}
+                  />
+                  {i < experience.length - 1 && <div className={styles.line} />}
                 </div>
                 <div className={styles.content}>
+                  {e.period.includes('Present') && (
+                    <span className={styles.activeBadge}>● Active</span>
+                  )}
+                  {e.period.includes('May 2026') && (
+                    <span className={styles.completedBadge}>✓ Completed</span>
+                  )}
                   <div className={styles.period}>{e.period}</div>
                   <div className={styles.role}>{e.role}</div>
-                  <div className={styles.company}>{e.company}</div>
+                  <div
+                    className={styles.company}
+                    style={{ color: companyColors[e.company] || 'var(--purple)' }}
+                  >
+                    {e.company}
+                  </div>
                   <div className={styles.desc}>{e.desc}</div>
                   <div className={styles.tags}>
                     {e.tags.map(t => <span key={t} className={styles.tag}>{t}</span>)}

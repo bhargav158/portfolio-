@@ -7,7 +7,7 @@ export default function Projects() {
       <div className="section-container">
         <div className="section-label">What I've Built</div>
         <h2 className="section-title">Selected <span className="grad-text">Projects</span></h2>
-        <p className={styles.sub}>Production-ready AI systems and full-stack applications.</p>
+        <p className={styles.sub}>9 production-ready AI systems, full-stack apps and hackathon projects.</p>
 
         <div className={styles.grid}>
           {projects.map((p) => (
@@ -19,9 +19,13 @@ export default function Projects() {
               className={`${styles.card} ${p.highlight ? styles.featured : ''}`}
             >
               {p.highlight && <div className={styles.featuredBadge}>⭐ Featured</div>}
+              {p.isNew && !p.highlight && <div className={styles.newBadge}>✨ New</div>}
+
               <div className={styles.top}>
                 <span className={styles.num}>{p.num}</span>
-                <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                </svg>
               </div>
               <h3 className={styles.title}>{p.title}</h3>
               <p className={styles.desc}>{p.desc}</p>
