@@ -1,52 +1,55 @@
-.section {
-  padding: 7rem 0;
-  position: relative; z-index: 1;
-}
-
-.sub {
-  color: var(--muted); font-size: 15px;
-  margin-bottom: 3rem; max-width: 500px;
-}
+.section { padding: 7rem 0; position: relative; z-index: 1; }
+.sub { color: var(--muted); font-size: 15px; margin-bottom: 3rem; max-width: 520px; }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.5rem;
-  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+  border-radius: 14px; padding: 1.5rem;
+  transition: all 0.25s; position: relative; overflow: hidden;
 }
-.card:hover {
-  border-color: rgba(168,85,247,0.4);
-  background: var(--surface2);
-  transform: translateY(-2px);
+.card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--grad); opacity: 0; transition: opacity 0.25s;
 }
+.card:hover { border-color: rgba(79,158,255,0.3); background: var(--surface2); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.card:hover::before { opacity: 1; }
 
 .catLabel {
-  font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
-  text-transform: uppercase; color: var(--purple);
-  margin-bottom: 1rem;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--cyan);
+  margin-bottom: 1rem; display: flex; align-items: center; gap: 6px;
+}
+.catLabel::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--grad); display: block;
 }
 
-.pills { display: flex; flex-wrap: wrap; gap: 8px; }
+.pills { display: flex; flex-wrap: wrap; gap: 7px; }
 
 .pill {
-  background: rgba(168,85,247,0.08);
-  border: 1px solid rgba(168,85,247,0.2);
-  color: var(--text); font-size: 13px;
+  background: rgba(79,158,255,0.07);
+  border: 1px solid rgba(79,158,255,0.15);
+  color: var(--text); font-size: 12.5px;
   padding: 4px 12px; border-radius: 6px;
-  transition: background 0.15s, border-color 0.15s;
+  transition: all 0.15s; cursor: default;
 }
 .pill:hover {
-  background: rgba(168,85,247,0.18);
-  border-color: rgba(168,85,247,0.5);
+  background: rgba(79,158,255,0.18);
+  border-color: rgba(79,158,255,0.4);
+  color: var(--cyan);
+  transform: translateY(-1px);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .section { padding: 5rem 0; }
+  .grid { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 480px) {
+  .grid { grid-template-columns: 1fr; }
 }

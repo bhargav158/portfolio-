@@ -6,89 +6,64 @@
 }
 
 .colTitle {
-  font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
-  text-transform: uppercase; color: var(--muted);
+  font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--faint);
   margin-bottom: 2rem; padding-bottom: 0.75rem;
   border-bottom: 1px solid var(--border);
 }
 
-/* timeline */
 .timeline { display: flex; flex-direction: column; }
 
-.item {
-  display: flex; gap: 1.25rem;
-  position: relative;
-}
+.item { display: flex; gap: 1.25rem; position: relative; }
 
 .dotCol {
   display: flex; flex-direction: column; align-items: center;
   flex-shrink: 0; width: 14px; padding-top: 4px;
 }
+.dotInner { width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0; position: relative; z-index: 1; }
+.line { width: 1px; flex: 1; background: linear-gradient(to bottom, var(--border2), transparent); margin: 6px 0; min-height: 20px; }
 
-.dotInner {
-  width: 14px; height: 14px; border-radius: 50%;
-  flex-shrink: 0; position: relative; z-index: 1;
-}
-
-.line {
-  width: 1px; flex: 1;
-  background: linear-gradient(to bottom, var(--border2), transparent);
-  margin: 6px 0;
-  min-height: 20px;
-}
-
-.content {
-  padding-bottom: 2rem; flex: 1; position: relative;
-}
+.content { padding-bottom: 2.25rem; flex: 1; position: relative; }
 
 .activeBadge {
   display: inline-flex; align-items: center; gap: 4px;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
-  color: var(--green); background: rgba(52,211,153,0.1);
-  border: 1px solid rgba(52,211,153,0.25);
-  padding: 2px 8px; border-radius: 100px;
-  margin-bottom: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--green); background: rgba(16,217,160,0.1);
+  border: 1px solid rgba(16,217,160,0.25);
+  padding: 2px 8px; border-radius: 100px; margin-bottom: 6px;
 }
-
 .completedBadge {
   display: inline-flex; align-items: center; gap: 4px;
-  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
-  color: var(--cyan); background: rgba(34,211,238,0.1);
-  border: 1px solid rgba(34,211,238,0.25);
-  padding: 2px 8px; border-radius: 100px;
-  margin-bottom: 6px;
+  font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+  color: var(--cyan); background: rgba(0,212,255,0.1);
+  border: 1px solid rgba(0,212,255,0.25);
+  padding: 2px 8px; border-radius: 100px; margin-bottom: 6px;
 }
 
-.period { font-size: 11px; color: var(--faint); letter-spacing: 0.04em; margin-bottom: 2px; }
-.role   { font-weight: 700; font-size: 15px; margin-bottom: 2px; color: var(--text); }
+.period { font-size: 11px; color: var(--faint); letter-spacing: 0.04em; margin-bottom: 3px; }
+.role { font-weight: 700; font-size: 15px; margin-bottom: 3px; color: var(--text); }
 .company { font-size: 12px; font-weight: 600; margin-bottom: 8px; letter-spacing: 0.02em; }
-.desc   { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin-bottom: 10px; }
+.desc { font-size: 13.5px; color: var(--muted); line-height: 1.75; margin-bottom: 10px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
-  background: rgba(155,109,255,0.08);
-  border: 1px solid rgba(155,109,255,0.2);
-  color: var(--muted); font-size: 11px;
-  padding: 2px 9px; border-radius: 4px;
+  background: rgba(79,158,255,0.07); border: 1px solid rgba(79,158,255,0.18);
+  color: var(--muted); font-size: 11px; padding: 2px 9px; border-radius: 4px;
 }
 
-/* achievements */
 .achList { display: flex; flex-direction: column; gap: 0.85rem; }
 .achCard {
   display: flex; gap: 1rem; align-items: flex-start;
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 12px; padding: 1.1rem 1.25rem;
-  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+  transition: all 0.2s;
 }
 .achCard:hover {
-  border-color: rgba(155,109,255,0.35);
-  background: var(--surface2);
+  border-color: rgba(79,158,255,0.3); background: var(--surface2);
   transform: translateX(4px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 .achIcon { font-size: 1.3rem; line-height: 1; flex-shrink: 0; margin-top: 1px; }
 .achTitle { font-weight: 600; font-size: 13.5px; margin-bottom: 3px; color: var(--text); }
-.achDesc  { font-size: 12px; color: var(--muted); line-height: 1.6; }
+.achDesc { font-size: 12px; color: var(--muted); line-height: 1.6; }
 
-@media (max-width: 768px) {
-  .section { padding: 5rem 0; }
-  .layout { grid-template-columns: 1fr; gap: 3rem; }
-}
+@media (max-width: 768px) { .section { padding: 5rem 0; } .layout { grid-template-columns: 1fr; gap: 3rem; } }

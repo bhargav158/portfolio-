@@ -1,70 +1,52 @@
 .section { padding: 7rem 0; position: relative; z-index: 1; }
 
 .pubBlock { margin-bottom: 6rem; }
-
-.pubList { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+.pubList { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 2.5rem; }
 
 .pubCard {
   display: grid; grid-template-columns: auto 1fr; gap: 1.25rem; align-items: start;
   background: var(--surface); border: 1px solid var(--border);
-  border-radius: 12px; padding: 1.5rem 1.75rem;
-  transition: border-color 0.2s;
+  border-radius: 14px; padding: 1.5rem 1.75rem;
+  transition: all 0.2s;
 }
-.pubCard:hover { border-color: rgba(168,85,247,0.35); }
+.pubCard:hover { border-color: rgba(79,158,255,0.3); background: var(--surface2); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
 
 .pubType {
   font-size: 10px; font-weight: 700; letter-spacing: 0.12em;
   text-transform: uppercase; padding: 4px 10px;
   border-radius: 4px; margin-top: 2px; white-space: nowrap;
 }
-.journal { background: rgba(16,185,129,0.12); color: var(--green); border: 1px solid rgba(16,185,129,0.25); }
-.conf    { background: rgba(168,85,247,0.12); color: var(--purple); border: 1px solid rgba(168,85,247,0.25); }
+.journal { background: rgba(16,217,160,0.1); color: var(--green); border: 1px solid rgba(16,217,160,0.25); }
+.conf    { background: rgba(79,158,255,0.1); color: var(--blue); border: 1px solid rgba(79,158,255,0.25); }
 
 .pubTitle { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
 .pubVenue { font-size: 13px; color: var(--muted); line-height: 1.6; }
 .pubAward {
   display: inline-flex; align-items: center; gap: 5px;
   margin-top: 8px; font-size: 12px; font-weight: 600;
-  color: var(--purple); background: rgba(168,85,247,0.1);
-  border: 1px solid rgba(168,85,247,0.2);
+  color: var(--cyan); background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
   padding: 3px 10px; border-radius: 6px;
 }
 
-/* contact */
-.contactGrid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 2rem; margin-top: 2.5rem;
-}
-
-.tagline {
-  font-size: 15px; color: var(--muted); line-height: 1.8;
-  max-width: 600px; margin-top: 1rem;
-}
+.contactGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2.5rem; }
+.tagline { font-size: 15px; color: var(--muted); line-height: 1.8; max-width: 600px; margin-top: 1rem; }
 
 .contactCard {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px; overflow: hidden;
-  position: relative;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden; position: relative;
 }
-.contactCardInner {
-  padding: 2.5rem; position: relative; z-index: 1;
-}
+.contactCardInner { padding: 2.5rem; position: relative; z-index: 1; }
 .glowOrb {
   position: absolute; top: -60px; right: -60px;
-  width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(168,85,247,0.2), transparent 70%);
+  width: 220px; height: 220px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,158,255,0.15), transparent 70%);
   pointer-events: none;
 }
 
-.emailLabel {
-  font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em;
-  color: var(--faint); margin-bottom: 0.5rem;
-}
-.email {
-  font-size: 1.15rem; font-weight: 600; color: var(--purple);
-  word-break: break-all; display: block; margin-bottom: 0.5rem;
-}
+.emailLabel { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--faint); margin-bottom: 0.5rem; }
+.email { font-size: 1.1rem; font-weight: 600; color: var(--blue); word-break: break-all; display: block; margin-bottom: 0.5rem; transition: color 0.2s; }
+.email:hover { color: var(--cyan); }
 .emailSub { font-size: 13px; color: var(--muted); }
 
 .linksCol { display: flex; flex-direction: column; gap: 0.85rem; }
@@ -73,26 +55,19 @@
   display: flex; align-items: center; gap: 1rem;
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 12px; padding: 1rem 1.25rem;
-  transition: border-color 0.2s, background 0.2s;
-  text-decoration: none; color: inherit;
+  transition: all 0.2s; text-decoration: none; color: inherit;
 }
-.linkCard:hover { border-color: rgba(168,85,247,0.35); background: var(--surface2); }
+.linkCard:hover { border-color: rgba(79,158,255,0.3); background: var(--surface2); transform: translateX(4px); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
 
 .linkIcon {
   width: 38px; height: 38px; border-radius: 10px;
-  background: rgba(168,85,247,0.1);
-  border: 1px solid rgba(168,85,247,0.2);
+  background: rgba(79,158,255,0.08); border: 1px solid rgba(79,158,255,0.2);
   display: flex; align-items: center; justify-content: center;
-  font-size: 15px; font-weight: 700; flex-shrink: 0;
-  color: var(--purple);
+  font-size: 15px; font-weight: 700; flex-shrink: 0; color: var(--blue);
 }
-.linkLabel { font-size: 11px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; }
-.linkVal   { font-size: 13.5px; font-weight: 500; color: var(--text); }
-.linkArrow { color: var(--faint); margin-left: auto; }
-.linkCard:hover .linkArrow { color: var(--purple); }
+.linkLabel { font-size: 10.5px; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; }
+.linkVal { font-size: 13.5px; font-weight: 500; color: var(--text); }
+.linkArrow { color: var(--faint); margin-left: auto; transition: all 0.2s; }
+.linkCard:hover .linkArrow { color: var(--blue); transform: translate(2px,-2px); }
 
-@media (max-width: 768px) {
-  .section { padding: 5rem 0; }
-  .contactGrid { grid-template-columns: 1fr; }
-  .pubCard { grid-template-columns: 1fr; }
-}
+@media (max-width: 768px) { .section { padding: 5rem 0; } .contactGrid { grid-template-columns: 1fr; } .pubCard { grid-template-columns: 1fr; } }

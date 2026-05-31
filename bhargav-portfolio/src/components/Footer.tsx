@@ -1,5 +1,4 @@
 import styles from './Footer.module.css'
-
 export default function Footer() {
   return (
     <footer className={styles.footer}>
@@ -7,7 +6,7 @@ export default function Footer() {
         <div className={styles.left}>
           <div className={styles.logo}>
             <span className={styles.logoBox}>BM</span>
-            <span>Bhargav<span className={styles.purple}>M</span></span>
+            <span>Bhargav<span className={styles.blue}>M</span></span>
           </div>
           <div className={styles.sub}>Software Engineer · Full Stack · AI/ML</div>
         </div>
