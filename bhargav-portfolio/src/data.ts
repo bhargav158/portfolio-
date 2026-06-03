@@ -9,7 +9,7 @@ export const skills = [
 
 export const experience = [
   {
-  
+    period: '2026',
     company: 'Vayu Aarambh Innovations',
     role: 'Software Developer',
     desc: 'Built scalable full-stack modules for AI + IoT products using Next.js, Node.js and Firebase. Collaborated with cross-functional teams to deliver production-ready features.',
